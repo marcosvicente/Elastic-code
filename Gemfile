@@ -28,10 +28,15 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+gem "redis", "~> 4.0"
+
+# Queues
+gem 'sidekiq', '~> 7.0.3'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
+# Validation CNPJ
+gem 'cpf_cnpj', '~> 0.5'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -72,6 +77,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'faker'
+  gem 'factory_bot_rails'
+  gem 'rspec-sidekiq'
+
 end
 
 group :development do
@@ -91,6 +100,5 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem 'rspec-sidekiq'
   gem 'simplecov', require: false
 end
