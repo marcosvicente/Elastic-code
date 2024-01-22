@@ -9,7 +9,7 @@
 #  inss_dedution      :float
 #  inss_liquid_salary :float
 #  name               :string
-#  salary             :decimal(, )
+#  salary             :decimal(8, 2)
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  address_id         :bigint           not null
@@ -39,7 +39,13 @@ class Proponent < ApplicationRecord
 
   validate :valid_cpf?
  
+  after_create :create_salary_dependeces
+
   def valid_cpf?
     errors.add('CPF não e valido') unless CPF.valid?(self.cpf) 
+  end
+
+  def create_salary_dependeces
+    CreateSalaryDependecesWorker.perform_async(self.id)
   end
 end

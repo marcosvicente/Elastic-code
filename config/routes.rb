@@ -4,4 +4,7 @@ Rails.application.routes.draw do
 
   resources :proponents
   root 'proponents#index'
+
+  get 'inss/calculation'
+  get 'relatory/index'
 end
