@@ -2,14 +2,17 @@
 #
 # Table name: proponents
 #
-#  id         :bigint           not null, primary key
-#  birth_date :date
-#  cpf        :string
-#  name       :string
-#  salary     :decimal(, )
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  address_id :bigint           not null
+#  id                 :bigint           not null, primary key
+#  birth_date         :date
+#  cpf                :string
+#  inss_aliquot       :float
+#  inss_dedution      :float
+#  inss_liquid_salary :float
+#  name               :string
+#  salary             :decimal(, )
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  address_id         :bigint           not null
 #
 # Indexes
 #
